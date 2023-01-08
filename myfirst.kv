@@ -1,1 +1,30 @@
-MainInterface:
+#Definindo a internface principal da aplicação.
+MainInterface: 
+
+#Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
+<MainInterface>:
+    Label:
+        text: "Read me!"
+        color: 1,1,1,1 #rgba
+        size: "100dp", "100dp" #DP - Density Pixels
+        pos: 350, 350
+    Button:
+        text: "Click me!"
+        color: 1,1,1,1
+        size: "100dp", "100dp"
+        pos: 350, 250
+
+#Definindo as configurações de classe SecondInterface definida no arquivo main.py em específico.
+<SecondInterface>:
+    Label:
+        text: "I might be the App's root interface as well."
+        color: 1,1,1,1
+        pos: 350, 300
+    Label:
+        text: "You just have to define me in the second line instead of 'MainIinterface'."
+        color: 1,1,1,1
+        pos: 350, 275
+    Label:
+        text: "Check it out!"
+        color: 1,1,1,1
+        pos: 350, 250

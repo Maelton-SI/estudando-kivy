@@ -4,6 +4,9 @@ from kivy.uix.widget import Widget
 class MainInterface(Widget):
     pass
 
+class SecondInterface(Widget):
+    pass
+
 class MyFirstApp(App):
     pass
 
