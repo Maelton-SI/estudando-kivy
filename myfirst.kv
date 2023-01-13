@@ -1,5 +1,5 @@
 #Definindo a internface principal da aplicação.
-GridLayoutExample:
+EleventhLayout:
 
 #Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
 <MainInterface>:
@@ -204,3 +204,33 @@ GridLayoutExample:
     AnchorLayoutExample:
     Button:
         text: "I'm a button."
+
+<EleventhLayout@GridLayout>:
+    rows: 2
+
+    #Para que a altura ou largura de uma linha ou coluna seja manualmente definida em uma interface GridLayout, é necessário que todos os elementos dessa linha ou coluna possuam as mesmas configurações de altura/largura manualmente definidas.
+
+    #Como nesse exemplo em que o 1º e o 6º label possuem as mesmas configurações manualmente definidas pela propriedade "size_hint".
+    Label:
+        size_hint: .1, 1
+        text: "ONE"
+    Label:
+        text: "TWO"
+    Label:
+        text: "THREE"
+    Label:
+        text: "FOUR"
+    Label:
+        text: "FIVE"
+
+    Label:
+        size_hint: .1, 1
+        text: "SIX"
+    Label:
+        text: "SEVEN"
+    Label:
+        text: "EIGHT"
+    Label:
+        text: "NINE"
+    Label:
+        text: "TEN"
