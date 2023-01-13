@@ -1,5 +1,5 @@
 #Definindo a internface principal da aplicação.
-FourthInterface:
+FifthInterface:
 
 #Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
 <MainInterface>:
@@ -66,3 +66,31 @@ FourthInterface:
     Button:
         text: "Four"
         color: 1, 1, 0, 1
+
+<FifthInterface>:
+    orientation: "horizontal"
+    Button:
+        text: "A"
+        color: 1,0,0,1
+
+        size_hint: None, None
+        size: "250dp", "250dp"
+
+        #O atributo pos_hint determina o posicionamento de um elemento na tela.
+        #Existem três chaves possíveis para o posicionamento horizonta, e três para o posicionamento vertical.
+        #Apenas uma chave pode ser escolhida para determinar o posicionamento horizontal e apenas uma para o vertical.
+        #Os valores das chaves são dados em porcentagem, 0 = 0% e 1 = 100%, e dizem respeito a porcentagem da tela.
+
+        #x, center_x, right
+
+        #A chave x diz respeito ao ponto superior esquerdo do elemento.
+        #A chave center_x diz respeito ao ponto superior central do elemento.
+        #A chave right diz respeito ao ponto superior direito do elemento.
+
+        #y, center_y, top
+
+        #A chave y diz respeito ao ponto inferior esquerdo do elemento.
+        #A chave center_y diz respeito ao ponto localizado no centro da lateral esquerda do elemento.
+        #A chave top diz respeito ao ponto superior esquerdo do elemento.
+
+        pos_hint: {'center_y': .5}

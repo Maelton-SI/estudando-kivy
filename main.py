@@ -45,5 +45,8 @@ class ThirdInterface(BoxLayout):
 class FourthInterface(BoxLayout):
     pass
 
+class FifthInterface(BoxLayout):
+    pass
+
 if __name__ == '__main__':
     MyFirstApp().run()
