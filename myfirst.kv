@@ -1,5 +1,5 @@
 #Definindo a internface principal da aplicação.
-SeventhInterface:
+AnchorLayoutExample:
 
 #Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
 <MainInterface>:
@@ -144,3 +144,19 @@ SeventhInterface:
         Button:
             text: "Vertical 3"
             color: 0,0,1,1
+
+<EigthInterface>:
+    Button:
+        text: "Testing size_hint"
+        size_hint: .1, .1
+
+<AnchorLayoutExample>:
+    #As propriedades "anchor_x" e "anchor_y" definem o posicionamento dos elementos dentro da interface
+    #Valores para essa propriedade: left, center, right
+    anchor_x: "left"
+
+    #Valores para essa propriedade: top, bottom, center 
+    anchor_y: "center"
+    Button:
+        text: "A"
+        size_hint: .1, .1
