@@ -1,5 +1,5 @@
 #Definindo a internface principal da aplicação.
-TenthInterface:
+GridLayoutExample:
 
 #Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
 <MainInterface>:
@@ -157,9 +157,8 @@ TenthInterface:
 
     #Valores para essa propriedade: top, bottom, center 
     anchor_y: "center"
-    Button:
-        text: "A"
-        size_hint: .1, .1
+    Label:
+        text: "Hi, I'm part of an anchor layout."
 
 <TenthInterface>:
     anchor_y: "top"
@@ -185,3 +184,23 @@ TenthInterface:
             text: "H"
         Button:
             text: "I"
+
+#Definindo classe GridLayoutExample a partir do arquivo (.kv)
+<GridLayoutExample@GridLayout>:
+    #Em um GridLayout, é obrigatória a utilização de uma das propriedades: "cols" ou "rows"
+
+    cols: 2
+    TenthInterface:
+    Button:
+        text: "1"
+    Button:
+        text: "2"
+    Button:
+        text: "3"
+    Button:
+        text: "4"
+    Button:
+        text: "5"
+    AnchorLayoutExample:
+    Button:
+        text: "I'm a button."
