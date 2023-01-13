@@ -3,7 +3,9 @@ from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.stacklayout import StackLayout
 from kivy.uix.button import Button
+from kivy.metrics import dp
 
 class MainInterface(Widget):
     pass
@@ -65,10 +67,45 @@ class AnchorLayoutExample(AnchorLayout):
 class TenthInterface(AnchorLayout):
     pass
 
-#class GridLayoutExample(GridLayout):
-    #pass
-    
-    #Essa classe foi definida dentro do arqivo (.kv)
+'''
+#Essa classe foi definida a partir do arquivo (.kv)
+class GridLayoutExample(GridLayout):
+    pass
+'''
+
+class StackLayoutExample(StackLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        #Valores possíveis para a propriedade orientation (forma com que os elementos são inseridos e exibidos na interface) em um StackLayout:
+        #"lr-tb" (left-right, top-bottom)
+        #"rl-tb" (right-left, top-bottom)
+        #"lr-bt" (left-right, bottom-top)
+        #"rl-bt" (left-right, bottom-top)
+        self.orientation = "lr-tb"
+        
+        #A propriedade padding determina o espaçamento interno da interface em relação a seus elementos.
+        #padding: width, height
+        self.padding = dp(20), dp(100)
+
+        self.spacing = 5
+
+        for button in range(1, 82):
+            b = Button(
+                        text = str(button), 
+                        size_hint = (.1, .1)
+                    )
+
+            self.add_widget(b)
+        
+        for letra in 'ABCDEFG':
+            b = Button(
+                        text = str(letra),
+                        size_hint = (None, None),
+                        size = (dp(50), dp(50))
+            )
+
+            self.add_widget(b)
 
 if __name__ == '__main__':
     MyFirstApp().run()
