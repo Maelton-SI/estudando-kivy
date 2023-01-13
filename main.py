@@ -51,5 +51,8 @@ class FifthInterface(BoxLayout):
 class SixthInterface(BoxLayout):
     pass
 
+class SeventhInterface(BoxLayout):
+    pass
+
 if __name__ == '__main__':
     MyFirstApp().run()
