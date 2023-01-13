@@ -61,5 +61,8 @@ class EigthInterface(BoxLayout):
 class AnchorLayoutExample(AnchorLayout):
     pass
 
+class TenthInterface(AnchorLayout):
+    pass
+
 if __name__ == '__main__':
     MyFirstApp().run()
