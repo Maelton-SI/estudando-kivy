@@ -42,5 +42,8 @@ class ThirdInterface(BoxLayout):
         self.add_widget(b2)
         self.add_widget(b3)
 
+class FourthInterface(BoxLayout):
+    pass
+
 if __name__ == '__main__':
     MyFirstApp().run()

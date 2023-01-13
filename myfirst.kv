@@ -1,5 +1,5 @@
 #Definindo a internface principal da aplicação.
-ThirdInterface:
+FourthInterface:
 
 #Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
 <MainInterface>:
@@ -28,3 +28,41 @@ ThirdInterface:
         text: "Check it out!"
         color: 1,1,1,1
         pos: 350, 250
+
+<FourthInterface>:
+    orientation: "vertical"
+    Button:
+        text: "One"
+        color: 1,0,0,1
+
+        #Propriedade size_hint
+
+        #Proporção do elemento em relação à sua parte na interface.
+        #Largura de 50% em relação ao espaçamento da interface destinado ao elemento.
+        #Altura de 100% em relação ao espaçamento da interface destinado ao elemento:
+        
+        #size_hint: .5, 1
+
+        #Interfaces BoxLayouts ajustam as dimensões de seus elementos automaticamente.
+
+        #Sendo assim, para que a propriedade "size" ou "width" e "height" sejam funcionais para os elementos da interface, é necessário que os #valores da propriedade size_hint sejam definidos como "None". 
+        
+        #Por exemplo, se eu desejar que a altura de um elemento seja padrão e proporcional à quantidade de elementos em tela, mas queira #determinar uma largura em específica. O seguinte código seria necessário:
+
+        size_hint: None, 1
+        width: "110dp"
+
+    Button:
+        text: "Two"
+        color: 0,1,0,1
+
+        size_hint: .5, None
+        height: "500dp"
+    Button:
+        text: "Three"
+        color: 0,0,1,1
+
+        size_hint: .75, 1
+    Button:
+        text: "Four"
+        color: 1, 1, 0, 1
