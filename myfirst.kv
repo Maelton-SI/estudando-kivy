@@ -1,5 +1,5 @@
 #Definindo a internface principal da aplicação.
-FifthInterface:
+SixthInterface:
 
 #Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
 <MainInterface>:
@@ -94,3 +94,27 @@ FifthInterface:
         #A chave top diz respeito ao ponto superior esquerdo do elemento.
 
         pos_hint: {'center_y': .5}
+
+<SixthInterface>:
+    BoxLayout:
+        Button:
+            text: "Horizontal 1"
+            color: 1,0,0,1
+        Button:
+            text: "Horizontal 2"
+            color: 0,1,0,1
+        Button:
+            text: "Horizontal 3"
+            color: 0,0,1,1
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: .5, 1
+        Button:
+            text: "Vertical 1"
+            color: 1,0,0,1
+        Button:
+            text: "Vertical 2"
+            color: 0,1,0,1
+        Button:
+            text: "Vertical 3"
+            color: 0,0,1,1
