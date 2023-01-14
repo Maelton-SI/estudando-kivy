@@ -5,6 +5,7 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.button import Button
+from kivy.uix.label import Label
 from kivy.metrics import dp
 
 class MainInterface(Widget):
@@ -106,6 +107,16 @@ class StackLayoutExample(StackLayout):
             )
 
             self.add_widget(b)
+
+class TwelvethInterface(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        b = Label(
+                    text = "Serei o primeiro a ser inserido na tela, antes dos elementos definidos no arquivo (.kv)."
+                )
+        
+        self.add_widget(b)
 
 if __name__ == '__main__':
     MyFirstApp().run()
