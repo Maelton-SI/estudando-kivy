@@ -1,5 +1,5 @@
 #Definindo a internface principal da aplicação.
-ScrollViewExemple:
+PageLayoutExample:
 
 #Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
 <MainInterface>:
@@ -244,8 +244,14 @@ ScrollViewExemple:
 <ScrollViewExemple@ScrollView>:
     #Embutindo interface dentro da interface com scroll
     ThirteenthInterface:
-        #Como desejamos que nosso scroll seja vertical, definimos a altura da interface dentro da ScrollView Interface como a altura mínima necessária para disposição dos elementos em tela.
+        #Como desejamos que nosso scroll seja vertical, definimos a altura da interface dentro da ScrollView Interface como a altura dos elementos da interface ThirteenthInterface.
         
         #Com a altura definida desta maneira, é possível utilizar o scroll na interface. 
         size_hint: 1, None
         height: self.minimum_height
+
+#Esse layout permite a exibição de vários layouts em uma única interface, separando-os como páginas de um livro (cada layout é uma página)
+<PageLayoutExample@PageLayout>:
+    MainInterface:
+    SixthInterface:
+    AnchorLayoutExample:
