@@ -118,5 +118,18 @@ class TwelvethInterface(BoxLayout):
         
         self.add_widget(b)
 
+class ThirteenthInterface(StackLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        for button in range(1, 82):
+            b = Button(
+                        text = str(button),
+                        size_hint = (None, None),
+                        size = (dp(100), dp(100))
+                )
+            
+            self.add_widget(b)
+
 if __name__ == '__main__':
     MyFirstApp().run()

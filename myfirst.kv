@@ -1,5 +1,5 @@
 #Definindo a internface principal da aplicação.
-TwelvethInterface:
+ScrollViewExemple:
 
 #Definindo as configurações de classe MainInterface definida no arquivo main.py em específico.
 <MainInterface>:
@@ -239,3 +239,13 @@ TwelvethInterface:
     orientation: "vertical"
     Label:
         text: "Serei inserido na interface depois de todos os elementos definidos no arquivo (.py)."
+
+#Definindo interface com scroll
+<ScrollViewExemple@ScrollView>:
+    #Embutindo interface dentro da interface com scroll
+    ThirteenthInterface:
+        #Como desejamos que nosso scroll seja vertical, definimos a altura da interface dentro da ScrollView Interface como a altura mínima necessária para disposição dos elementos em tela.
+        
+        #Com a altura definida desta maneira, é possível utilizar o scroll na interface. 
+        size_hint: 1, None
+        height: self.minimum_height
