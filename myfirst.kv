@@ -1,13 +1,15 @@
 MainInterface:
 
 <MainInterface>:
-    cols: 2
+    cols: 3
     Button:
-        text: root.button_text
-        on_press: root.on_click()
+        text: "Some uma unidade!"
+        on_press: root.soma_unidade()
     Label:
-        #A referência "root" diz respeito à classe definida no arquivo (.py)
-        #A referência "root" sincroniza a propriedade que a está utilizando à variável no arquivo (.py)
-        #sendo assim a propriedade do widget será atualizada automaticamente caso 
-        #Não se pode utilizar a referência "self", pois ela neste caso estaria relacionada ao seu widget pai, neste caso o "Label" widget.
-        text: root.label_text
+        text: root.unidades
+        font_name: "fonts/Lcd.ttf"
+        font_size: "125dp"
+    Button:
+        id: "sub"
+        text: "Subtraia uma unidade!"
+        on_press: root.subtrai_unidade()

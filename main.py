@@ -11,19 +11,16 @@ from kivy.properties import StringProperty
 
 
 class MainInterface(GridLayout):
-    #Tendo em vista que as configurações gráficas foram definidas no arquivo (.kv) não se faz necessária a definição do construtor da classe.
+    count = 1
+    unidades = StringProperty(str(count))
 
-    possibilities = [["Modify label", "Modify me!"], ["Unmodify label", "Umodify me!"]]
-
-    #Criando instâncias de uma propriedade de texto
-    button_text = StringProperty(possibilities[0][0])
-    label_text = StringProperty(possibilities[0][1])
+    def soma_unidade(self):
+        self.count += 1
+        self.unidades = str(self.count)
     
-    def on_click(self):
-        self.possibilities = self.possibilities[::-1]
-        
-        self.button_text = self.possibilities[0][0]
-        self.label_text = self.possibilities[0][1]
+    def subtrai_unidade(self):
+        self.count -= 1
+        self.unidades = str(self.count)
 
 class MyFirstApp(App):
     pass
