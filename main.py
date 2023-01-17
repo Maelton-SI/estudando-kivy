@@ -9,7 +9,6 @@ from kivy.uix.label import Label
 from kivy.metrics import dp
 from kivy.properties import StringProperty
 
-
 class MainInterface(GridLayout):
     count = 1
     unidades = StringProperty(str(count))
