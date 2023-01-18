@@ -1,0 +1,28 @@
+MainInterface:
+
+<MainInterface>:
+    orientation: "vertical"
+    OutputArea:
+        size_hint: 1, .4
+        Label:
+            text: root.inputed_data
+            pos_hint: {"center_x": .5}
+    InputArea:
+        size_hint: 1, .6
+        Top:
+            Button:
+                text: "C"
+            Button:
+                text: "<----"
+        Middle:
+            size_hint: 1, 1
+            cols: 3
+        Right:
+            size_hint: .25, 1
+            orientation: "vertical"
+            Button:
+                text: "0"
+                size_hint: 1, 1
+            Button:
+                text: "="
+                size_hint: 1, .5
