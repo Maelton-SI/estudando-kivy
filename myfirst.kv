@@ -1,7 +1,22 @@
 MainInterface:
 
 <MainInterface>:
-    cols: 3
+    cols: 4
+    RelativeLayout:
+        #Os valores possíveis para o atributo "state" de um widget ToggleButton
+        #são: normal (quando não precionado) e down (quando precionado)
+        ToggleButton:
+            text: "Off"
+            #Similiar ao Button.on_press
+            #Para passar o próprio widget ToggleButton para a função
+            #Utilizamos o parametro "self" como argumento na chamada da função dentro do arquivo (.kv)
+            #e adicionamos na declaração da função dentro do arquivo (.py) um parâmetro além do "self"
+            #esse parâmetro adicionado irá receber a referência do widget definido no arquivo (.kv)
+            #possibilitando a alteração dos valores de seus atributos
+            on_state: root.liga_desliga(self)
+            size_hint: 1, None
+            height: "100dp"
+            pos_hint: {"top": 1}
     Button:
         text: "Some uma unidade!"
         on_press: root.soma_unidade()
@@ -12,6 +27,5 @@ MainInterface:
         #RGB (%)
         color: 1, .5, 1
     Button:
-        id: "sub"
         text: "Subtraia uma unidade!"
         on_press: root.subtrai_unidade()

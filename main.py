@@ -11,15 +11,26 @@ from kivy.properties import StringProperty
 
 class MainInterface(GridLayout):
     count = 1
+    cont_aux = 1
+
     unidades = StringProperty(str(count))
 
     def soma_unidade(self):
-        self.count += 1
+        self.count += self.cont_aux
         self.unidades = str(self.count)
     
     def subtrai_unidade(self):
-        self.count -= 1
+        self.count -= self.cont_aux
         self.unidades = str(self.count)
+    
+    def liga_desliga(self, botao_toggle):
+        if botao_toggle.state == "normal":
+            botao_toggle.text = "Off"
+            self.cont_aux = 0
+
+        elif botao_toggle.state == "down":
+            botao_toggle.text = "On"
+            self.cont_aux = 1
 
 class MyFirstApp(App):
     pass
