@@ -8,29 +8,62 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.metrics import dp
 from kivy.properties import StringProperty
+from kivy.properties import BooleanProperty
 
 class MainInterface(GridLayout):
-    count = 1
-    cont_aux = 1
+    count = 0
+    soma_button_disabled = BooleanProperty(True)
+    sub_button_disabled = BooleanProperty(True)
 
     unidades = StringProperty(str(count))
+    status_botao = StringProperty("Off")
+    
+    texto_instrutivo = StringProperty("Ligue a calculadora para poder calcular!")
+    texto_explicativo = StringProperty()
 
     def soma_unidade(self):
-        self.count += self.cont_aux
-        self.unidades = str(self.count)
+        if not self.soma_button_disabled:
+            self.count += 1
+            self.unidades = str(self.count)
+        
+        if self.count == 10:
+            self.soma_button_disabled = True
+            self.texto_explicativo = "Esta calculadora não admite números maiores que 10 unidades."
+        else:
+            self.sub_button_disabled = False
+            self.texto_explicativo = ""
     
     def subtrai_unidade(self):
-        self.count -= self.cont_aux
-        self.unidades = str(self.count)
+        if not self.sub_button_disabled:
+            self.count -= 1
+            self.unidades = str(self.count)
+
+        if self.count == 0:
+            self.sub_button_disabled = True
+            self.texto_explicativo = "Esta calculadora não admite números negativos."
+
+        else:
+            self.soma_button_disabled = False
+            self.texto_explicativo = ""
     
     def liga_desliga(self, botao_toggle):
         if botao_toggle.state == "normal":
-            botao_toggle.text = "Off"
-            self.cont_aux = 0
+            self.soma_button_disabled = True
+            self.sub_button_disabled = True
+
+            self.count = 0
+            self.unidades = str(self.count)
+            
+            self.status_botao = "Off"
+            self.texto_instrutivo = "Ligue a calculadora para poder calcular!"
+            self.texto_explicativo = ""
 
         elif botao_toggle.state == "down":
-            botao_toggle.text = "On"
-            self.cont_aux = 1
+            self.soma_button_disabled = False
+            
+            self.status_botao = "On"
+            self.texto_instrutivo = "Calculadora somatória ligada!"
+            self.texto_explicativo = "Esta calculadora não admite números negativos."
 
 class MyFirstApp(App):
     pass
