@@ -6,23 +6,12 @@ MainInterface:
         orientation: "vertical"
         Label:
             text: root.texto_instrutivo
-            #Faz com que o tamanho do texto seja no máximo o tamanho do widget
-            #Sendo assim o texto quebra de linha automaticamente
             text_size: self.width, None
-            #Define o alinhamento horizontal do texto
             halign: "center"
-        #Os valores possíveis para o atributo "state" de um widget ToggleButton
-        #são: normal (quando não precionado) e down (quando precionado)
-        ToggleButton:
-            text: root.status_botao
-            #Similiar ao Button.on_press
-            #Para passar o próprio widget ToggleButton para a função
-            #Utilizamos o parametro "self" como argumento na chamada da função dentro do arquivo (.kv)
-            #e adicionamos na declaração da função dentro do arquivo (.py) um parâmetro além do "self"
-            #esse parâmetro adicionado irá receber a referência do widget definido no arquivo (.kv)
-            #possibilitando a alteração dos valores de seus atributos
-            on_state: root.liga_desliga(self)
-            height: "100dp"
+        Switch:
+            #A propriedade "active" de um widget switch pode possuir os valores booleanos:
+            #True (caso ativado) e False (Caso desativado)
+            on_active: root.on_off(self)
         Label:
             text: root.texto_explicativo
             text_size: self.width, None
@@ -35,7 +24,7 @@ MainInterface:
         text: root.unidades
         font_name: "fonts/Lcd.ttf"
         font_size: "125dp"
-        color: 1, .5, 1
+        color: root.cor_das_unidades
     Button:
         text: "Subtraia uma unidade!"
         on_press: root.subtrai_unidade()

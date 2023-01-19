@@ -9,6 +9,7 @@ from kivy.uix.label import Label
 from kivy.metrics import dp
 from kivy.properties import StringProperty
 from kivy.properties import BooleanProperty
+from kivy.properties import ColorProperty
 
 class MainInterface(GridLayout):
     count = 0
@@ -20,6 +21,8 @@ class MainInterface(GridLayout):
     
     texto_instrutivo = StringProperty("Ligue a calculadora para poder calcular!")
     texto_explicativo = StringProperty()
+
+    cor_das_unidades = ColorProperty((.2, .2, .2, .8))
 
     def soma_unidade(self):
         if not self.soma_button_disabled:
@@ -46,10 +49,11 @@ class MainInterface(GridLayout):
             self.soma_button_disabled = False
             self.texto_explicativo = ""
     
-    def liga_desliga(self, botao_toggle):
-        if botao_toggle.state == "normal":
+    def on_off(self, botao_toggle):
+        if botao_toggle.active == False:
             self.soma_button_disabled = True
             self.sub_button_disabled = True
+            self.cor_das_unidades = (.2, .2, .2, .8)
 
             self.count = 0
             self.unidades = str(self.count)
@@ -58,11 +62,12 @@ class MainInterface(GridLayout):
             self.texto_instrutivo = "Ligue a calculadora para poder calcular!"
             self.texto_explicativo = ""
 
-        elif botao_toggle.state == "down":
+        elif botao_toggle.active == True:
             self.soma_button_disabled = False
+            self.cor_das_unidades = (1, .5, 1, 1)
             
             self.status_botao = "On"
-            self.texto_instrutivo = "Calculadora somatória ligada!"
+            self.texto_instrutivo = ""
             self.texto_explicativo = "Esta calculadora não admite números negativos."
 
 class MyFirstApp(App):
